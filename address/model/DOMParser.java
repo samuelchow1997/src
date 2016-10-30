@@ -31,14 +31,14 @@ public class DOMParser {
 	
   public static Record[] getRecordArray() { 
         DOMParser parser = new DOMParser(); 
-        Document document = parser.parse("/Users/samuel/Documents/workspace/XMLReader/src/AST10106_ProjectSampleData.xml"); 
+        Document document = parser.parse("/Users/samuel/Documents/workspace/InventoryApplication_2/src/address/model/SampleData.xml"); 
         //get root element 
         NodeList record = document.getElementsByTagName("record");
         Record [] recordArray = new Record[record.getLength()];
         for(int i = 1,j=0; j< record.getLength(); i++,j++)
         {
        	 recordArray[j] = new Record();
-       	 recordArray[j].setBrand (document.getElementsByTagName("Brand").item(i).getTextContent());
+       	 recordArray[j].setBrand(document.getElementsByTagName("Brand").item(i).getTextContent());
        	 recordArray[j].setBuyCurrency (document.getElementsByTagName("BuyCurrency").item(i).getTextContent());
        	 recordArray[j].setBuyPrice (Double.parseDouble(document.getElementsByTagName("BuyPrice").item(i).getTextContent()));
        	 recordArray[j].setCategory (document.getElementsByTagName("Category").item(i).getTextContent());
